@@ -19,6 +19,12 @@ def generate_launch_description() -> launch.LaunchDescription:
             launch.actions.DeclareLaunchArgument(
                 name="model", default_value=default_model_path, description="Absolute path to robot urdf file"
             ),
+            DeclareLaunchArgument(
+                name="rviz",
+                default_value="True",
+                choices=["True", "true", "False", "false"],
+                description="Flag to enable rviz gui",
+            ),
             launch.actions.DeclareLaunchArgument(
                 name="rviz",
                 default_value="True",
